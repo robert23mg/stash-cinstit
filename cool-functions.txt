@@ -1,0 +1,23 @@
+function isValidEmail(email:String):Boolean {
+	var emailExpression:RegExp = /([a-z0-9._-]+?)@([a-z0-9.-]+)\.([a-z]{2,4})/;
+	return emailExpression.test(email);
+}
+
+function checkFilteredWords(inputText:String, filteredWords:Array):Boolean {
+	var s:String = inputText.toLowerCase();
+	for(var i:Number = 0; i < filteredWords.length; i++)
+		if(inputText.indexOf(filteredWords[i]) != -1) return true;
+	return false;
+}
+
+function shuffleArray(p_array:Array):Array{
+	var newArray:Array = new Array();
+	var rndIndex:int;
+	for(var i:int = 0;i<p_array.length;i++){
+		rndIndex = Math.floor(Math.random()*p_array.length);
+		newArray.push(p_array[rndIndex]);
+		p_array.splice(rndIndex,1);
+	}
+	
+	return newArray;
+}
